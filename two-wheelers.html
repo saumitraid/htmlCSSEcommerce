@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>ClikShop || TwoWheelers</title>
+    <!-- own js -->
+    <script src="./js/script.js" defer></script>
+    <!-- payment js link -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+
+<body class="protected">
+
+    <!-- ... Top-nav ....-->
+    <section>
+        <div class="top-nav sticky-top head">
+            <div class="container">
+                <div id="greeting"></div>
+                <h3>0208 058 2932   ||  Customerservices@ClikShop.Co.in</h3>
+            </div>
+        </div>
+    </section>
+       
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+        <img src="./img/logo.png" class="navbar-logo" alt="LOGO" style="width: 100px;" >
+        <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item item">
+                    <div class="input-group">
+                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" />
+                        <button type="button" class="btn btn-outline-primary" data-mdb-ripple-init>search</button>
+                    </div>
+                </li>
+                <li class="nav-item item">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item dropdown item">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class=" fas fa-user"></i> Profile 
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-clipboard-check"></i> Clik-Shop Plus Zone</a></li>
+                        <li><a class="dropdown-item" href="orders.html"><i class="fas fa-box"></i> Orders</a></li>
+                        <li><a class="dropdown-item" href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-gift"></i> Gift Cards</a></li>
+                        <li><a class="dropdown-item" href="contact.html"><i class="fas fa-phone-square-alt"></i></i> Contact</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" onclick="usrLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item item">
+                    <a class="nav-link" href="cart.html"><i class="fas fa-cart-arrow-down"></i> Cart</a>
+                </li>
+                <li class="nav-item item">
+                    <a class="nav-link " href="#"><i class="fas fa-store"></i> Become a Seller</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </nav>
+        
+    <!-- Nav bar products -->
+    <nav class="navbar-offer navbar-expand-lg">
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav container">
+    
+            <li class="nav-combo">
+                <img src="./img/glosry.png" alt="Grocery">
+                <a class="nav-link" href="grocery.html">Grocery</a>
+            </li>
+    
+            <li class="nav-combo">
+                <img src="./img/phone.png" alt="Mobiles">
+                <a class="nav-link" href="mobiles.html">Mobiles</a>
+            </li>
+            
+            <li class="nav-combo dropdown">
+                <img src="./img/fasion.png" alt="fashion">
+                <a class="nav-link dropdown-toggle" href="fassion.html">Fashion</a>
+                <div class="dropdown-content">
+        
+                    <div class="nested-dropdown">
+                        <a href="fassion.html">Men's Top Wear</a>
+                        <div class="nested-dropdown-content">
+                            <a href="fassion.html">Boys innerwear</a>
+                            <a href="fassion.html">Men's T-ShirtS</a>
+                            <a href="fassion.html">Men's Casual Shirts</a>
+                            <a href="fassion.html">Men's Formal Shirts</a>
+                            <a href="fassion.html">Men's Kurtas</a>
+                            <a href="fassion.html">Men's Blazers</a>
+                            <a href="fassion.html">Men's Raincoat</a>
+                            <a href="fassion.html">Men's Swaiters</a>
+                            <a href="fassion.html">All</a>
+                        </div>
+                    </div>
+        
+                    <div class="nested-dropdown">
+                        <a href="fassion.html">Men's Bottom Wear</a>
+                        <div class="nested-dropdown-content">
+                            <a href="fassion.html">Men's Jeans</a>
+                            <a href="fassion.html">Men's Trousers</a>
+                            <a href="fassion.html">Men's Tracksuit</a>
+                            <a href="fassion.html">Men's Shorts</a>
+                            <a href="fassion.html">Men's Threequartar</a>
+                            <a href="fassion.html">Men's Pyjama</a>
+                            <a href="fassion.html">Men's Dhoti</a>
+                            <a href="fassion.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="fassion.html">Women Top Wear</a>
+                        <div class="nested-dropdown-content">
+                            <a href="fassion.html">Women Sarees</a>
+                            <a href="fassion.html">Women Kurtas</a>
+                            <a href="fassion.html">Women Kurtis</a>
+                            <a href="fassion.html">Women Salwar </a>
+                            <a href="fassion.html">Women Gowns</a>
+                            <a href="fassion.html">Women Lehenga</a>
+                            <a href="fassion.html">Women Blouse</a>
+                            <a href="fassion.html">Women Shirts</a>
+                            <a href="fassion.html">Women T-Shirts</a>
+                            <a href="fassion.html">Women Dupatta</a>
+                            <a href="fassion.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="fassion.html">Women Western</a>
+                        <div class="nested-dropdown-content">
+                            <a href="fassion.html">Women Tops</a>
+                            <a href="fassion.html">Women Dresses</a>
+                            <a href="fassion.html">Women Polo</a>
+                            <a href="fassion.html">Women Jeans</a>
+                            <a href="fassion.html">Women Nighties</a>
+                            <a href="fassion.html">Women Nightsuit</a>
+                            <a href="fassion.html">Women Trouser</a>
+                            <a href="fassion.html">Women Sports Bra</a>
+                            <a href="fassion.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="fassion.html">Women Western</a>
+                        <div class="nested-dropdown-content">
+                            <a href="fassion.html">Women Flats</a>
+                            <a href="fassion.html">Women Heels</a>
+                            <a href="fassion.html">Women Wedges</a>
+                            <a href="fassion.html">Women Slipper</a>
+                            <a href="fassion.html">Women Casual Shoes</a>
+                            <a href="fassion.html">Women Ballerinas</a>
+                            <a href="fassion.html">Women Sneakers</a>
+                            <a href="fassion.html">Women Boots</a>
+                            <a href="fassion.html">Women Ethnic Shoes</a>
+                            <a href="fassion.html">All</a>
+                        </div>
+                    </div>
+    
+                </div>
+            </li>
+    
+            <li class="nav-combo">
+                <img src="./img/electronic.png" alt="Electronics">
+                <a class="nav-link" href="electronics.html">Electronics</a>
+            </li>
+            
+            <li class="nav-combo dropdown">
+                <img src="./img/boyy.png" alt="fassion">
+                <a class="nav-link dropdown-toggle" href="kids.html">Kids Fashion</a>
+                <div class="dropdown-content">
+        
+                    <div class="nested-dropdown">
+                        <a href="kids.html">Boy's Top Wear</a>
+                        <div class="nested-dropdown-content">
+                            <a href="kids.html">Boy's innerwear</a>
+                            <a href="kids.html">Boy's T-ShirtS</a>
+                            <a href="kids.html">Boy's Casual Shirts</a>
+                            <a href="kids.html">Boy's Formal Shirts</a>
+                            <a href="kids.html">Boy's Kurtas</a>
+                            <a href="kids.html">Boy's Blazers</a>
+                            <a href="kids.html">Boy's Raincoat</a>
+                            <a href="kids.html">Boy's Swaiters</a>
+                            <a href="kids.html">All</a>
+                        </div>
+                    </div>
+        
+                    <div class="nested-dropdown">
+                        <a href="kids.html">Boy's Bottom Wear</a>
+                        <div class="nested-dropdown-content">
+                            <a href="kids.html">Boy's Jeans</a>
+                            <a href="kids.html">Boy's Trousers</a>
+                            <a href="kids.html">Boy's Tracksuit</a>
+                            <a href="kids.html">Boy's Shorts</a>
+                            <a href="kids.html">Boy's Threequartar</a>
+                            <a href="kids.html">Boy's Pyjama</a>
+                            <a href="kids.html">Boy's Dhoti</a>
+                            <a href="kids.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="kids.html">Girl's Top Wear</a>
+                        <div class="nested-dropdown-content">
+                            <a href="kids.html">Girl's Sarees</a>
+                            <a href="kids.html">Girl's Kurtas</a>
+                            <a href="kids.html">Girl's Kurtis</a>
+                            <a href="kids.html">Girl's Salwar </a>
+                            <a href="kids.html">Girl's Gowns</a>
+                            <a href="kids.html">Girl's Lehenga</a>
+                            <a href="kids.html">Girl's Blouse</a>
+                            <a href="kids.html">Girl's Shirts</a>
+                            <a href="kids.html">Girl's T-Shirts</a>
+                            <a href="kids.html">Girl's Dupatta</a>
+                            <a href="kids.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="kids.html">Girl's Western</a>
+                        <div class="nested-dropdown-content">
+                            <a href="kids.html">Girl's Tops</a>
+                            <a href="kids.html">Girl's Dresses</a>
+                            <a href="kids.html">Girl's Polo</a>
+                            <a href="kids.html">Girl's Jeans</a>
+                            <a href="kids.html">Girl's Nighties</a>
+                            <a href="kids.html">Girl's Nightsuit</a>
+                            <a href="kids.html">Girl's Trouser</a>
+                            <a href="kids.html">Girl's Sports Bra</a>
+                            <a href="kids.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="kids.html">Girl's Western</a>
+                        <div class="nested-dropdown-content">
+                            <a href="kids.html">Girl's Flats</a>
+                            <a href="kids.html">Girl's Heels</a>
+                            <a href="kids.html">Girl's Wedges</a>
+                            <a href="kids.html">Girl's Slipper</a>
+                            <a href="kids.html">Girl's Casual Shoes</a>
+                            <a href="kids.html">Girl's Ballerinas</a>
+                            <a href="kids.html">Girl's Sneakers</a>
+                            <a href="kids.html">Girl's Boots</a>
+                            <a href="kids.html">Girl's Ethnic Shoes</a>
+                            <a href="kids.html">All</a>
+                        </div>
+                    </div>
+    
+                </div>
+            </li>
+    
+            <li class="nav-combo dropdown">
+                <img src="./img/Furniture.png" alt="Home & Furniture">
+                <a class="nav-link dropdown-toggle" href="home_furniture.html">Home & Furniture</a>
+                <div class="dropdown-content">
+                
+                    <div class="nested-dropdown">
+                        <a href="home_furniture.html">Kitchen & Serveware</a>
+                        <div class="nested-dropdown-content">
+                            <a href="home_furniture.html">Pans</a>
+                            <a href="home_furniture.html">Tawas</a>
+                            <a href="home_furniture.html">Pressure Cookers</a>
+                            <a href="home_furniture.html">Kitchen tools</a>
+                            <a href="home_furniture.html">Gas Stoves</a>
+                            <a href="home_furniture.html">Coffee Mugs</a>
+                            <a href="home_furniture.html">Dinner Set</a>
+                            <a href="home_furniture.html">Barware</a>
+                            <a href="home_furniture.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="home_furniture.html">Kitchen Storage</a>
+                        <div class="nested-dropdown-content">
+                            <a href="home_furniture.html">Water Bottles</a>
+                            <a href="home_furniture.html">Lunch Boxes</a>
+                            <a href="home_furniture.html">Flasks</a>
+                            <a href="home_furniture.html">Casseroles</a>
+                            <a href="home_furniture.html">Kitchen Containers</a>
+                            <a href="home_furniture.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="home_furniture.html">Furnishingr</a>
+                        <div class="nested-dropdown-content">
+                            <a href="home_furniture.html">Bedsheets</a>
+                            <a href="home_furniture.html">Curtains</a>
+                            <a href="home_furniture.html">Cushions & Pillows</a>
+                            <a href="home_furniture.html">Blankets </a>
+                            <a href="home_furniture.html">Bath Towels</a>
+                            <a href="home_furniture.html">Kitchen & Table Linen</a>
+                            <a href="home_furniture.html">Floor Coverings</a>
+                            <a href="home_furniture.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="home_furniture.html">Home Lighting</a>
+                        <div class="nested-dropdown-content">
+                            <a href="home_furniture.html">Wall Lamp</a>
+                            <a href="home_furniture.html">Bulbs</a>
+                            <a href="home_furniture.html">Table Lamp</a>
+                            <a href="home_furniture.html">Ceiling Lamp</a>
+                            <a href="home_furniture.html">Emergency Lights</a>
+                            <a href="home_furniture.html">All</a>
+                        </div>
+                    </div>
+        
+                    <div class="nested-dropdown">
+                        <a href="home_furniture.html">Living Room Furniture</a>
+                        <div class="nested-dropdown-content">
+                            <a href="home_furniture.html">Sofa</a>
+                            <a href="home_furniture.html">Sofa Beds</a>
+                            <a href="home_furniture.html">TV Units</a>
+                            <a href="home_furniture.html">Dining Tables & Chairs</a>
+                            <a href="home_furniture.html">Coffee Tables</a>
+                            <a href="home_furniture.html">Almira</a>
+                            <a href="home_furniture.html">Mirror</a>
+                            <a href="home_furniture.html">Cabinet</a>
+                            <a href="home_furniture.html">All</a>
+                        </div>
+                    </div>
+    
+                </div>
+            </li>
+    
+            <li class="nav-combo">
+                <img src="./img/fridge.png" alt="Electrical">
+                <a class="nav-link" href="electrical.html">Electrical</a>
+            </li>
+    
+            <li class="nav-combo">
+                <img src="./img/Beauty.png" alt="Toys & More">
+                <a class="nav-link" href="toys.html">Toys & More</a>
+            </li>
+    
+            <li class="nav-combo">
+                <img src="./img/twowhiller.png" alt="Two Wheelers">
+                <a class="nav-link" href="two-wheelers.html">Two Wheelers</a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+    
+    <!-- ............Grocery-main-work.......... -->
+    <div class="product-all-item">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- ...................left-side................ -->
+          <div class="col-xl-3 col-lg-3 left">
+            <div class="menu">
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center active"  aria-current="true"><i class="fa-regular fa-circle"></i>
+                All
+                <span class="badge bg-primary rounded-pill">15</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"><i class="fa-regular fa-circle"></i>
+                HERO
+                <span class="badge bg-primary rounded-pill">2</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"><i class="fa-regular fa-circle"></i>
+                BAJAJ 
+                <span class="badge bg-primary rounded-pill">1</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"><i class="fa-regular fa-circle"></i>
+                KTM
+                <span class="badge bg-primary rounded-pill">1</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"><i class="fa-regular fa-circle"></i>
+                YAMAHA
+                <span class="badge bg-primary rounded-pill">2</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"><i class="fa-regular fa-circle"></i>
+                JOY E-BIKE
+                <span class="badge bg-primary rounded-pill">3</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"><i class="fa-regular fa-circle"></i>
+                 HONDA
+                <span class="badge bg-primary rounded-pill">2</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"><i class="fa-regular fa-circle"></i>
+                ROYAL ENFIELD
+                <span class="badge bg-primary rounded-pill">3</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"><i class="fa-regular fa-circle"></i>
+                TVS
+                <span class="badge bg-primary rounded-pill">1</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"><i class="fa-regular fa-circle"></i>
+                OKAYA
+                <span class="badge bg-primary rounded-pill">1</span>
+              </li>
+              <li class="list-group-item">
+                <a href="#" data-toggle="collapse" data-target="#gheeOils" aria-expanded="false" aria-controls="gheeOils">
+                  <i class="fa-solid fa-plus"></i> Kids-Scooter
+                    <img src="./img/toyscooter_tw.png" class="float-right" alt="Fortune Oil" height="40">
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="#" data-toggle="collapse" data-target="#attaFlours" aria-expanded="false" aria-controls="attaFlours">
+                  <i class="fa-solid fa-plus"></i> Scooter
+                    <img src="./img/scooter_tw.png" class="float-right" alt="Aashirvaad Atta" width="30" height="40">
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="#" data-toggle="collapse" data-target="#masalasSpices" aria-expanded="false" aria-controls="masalasSpices">
+                  <i class="fa-solid fa-plus"></i> Bicycles
+                    <img src="./img/bicycle_tw.png" class="float-right" alt="Everest Masala" height="40">
+                </a>
+            </li>
+            </ul>
+            </div>
+          </div>
+          <!-- ...................right-side................ -->
+          <div class="col-xl-9 right">
+            <div class="container">
+              <div class="row">
+
+                <div class="col-xl-3 col-lg-3"> <!-- card no-1 -->
+                  <div class="product" onclick="OpenCatagoryDetails()">
+                    <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST" id="dfy" onclick="wishList('Hero XOOM (ZX)  (Polestar Blue)', './img/bike_1.png', '₹84,600')"></i></a>
+                    <img src="./img/bike_1.png" title="Hero XOOM (ZX)  (Polestar Blue)" alt="FORTUNE Soya Chunks" class="img-fluid">
+                    <h5>Hero XOOM (ZX)  (Polestar Blue)</h5>
+                    <div class="company_logo"><img src="./img/Hero-logo.png"  alt=""></div>
+                    <p class="description">A two-wheeler vehicle is a motorized or non-motorized transport with two wheels, commonly including bicycles and motorcycles.</p>
+                    <div class="star-icons">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                    <p class="price">₹84,600 <span class="old_price"> ₹90,000</span> 6% off</p>
+                    <button class="quantity" onclick="addcart('Hero XOOM (ZX)  (Polestar Blue)', './img/bike_1.png','84600','90000','6')">Add to Cart</button>
+                    <button  class="btn btn-danger" onclick="buyNow('ThankYou', '84600')">Buy Now</button>
+                  </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3"> <!-- card no-2 -->
+                  <div class="product" onclick="OpenCatagoryDetails()">
+                    <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('Hero Xtreme 160R 4V (BLAZING RED)', './img/bike_2.png','₹1,26,391')"></i></a>
+                    <img src="./img/bike_2.png" title="Hero Xtreme 160R 4V (BLAZING SPORTS RED)" alt="FORTUNE Soya Chunks" class="img-fluid">
+                    <h5>Hero Xtreme 160R 4V (BLAZING RED)</h5>
+                    <div class="company_logo"><img src="./img/Hero-logo.png"  alt=""></div>
+                    <p class="description">A two-wheeler vehicle is a motorized or non-motorized transport with two wheels, commonly including bicycles and motorcycles.</p>
+                    <div class="star-icons">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                    <p class="price">₹1,26,391 <span class="old_price"> ₹1,30,300</span> 3% off</p>
+                    <button class="quantity" onclick="addcart('Hero Xtreme 160R 4V (BLAZING RED)', './img/bike_2.png','126391','130300','3')">Add to Cart</button>
+                    <button  class="btn btn-danger" onclick="buyNow('ThankYou', '126391')">Buy Now</button>
+                  </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3"> <!-- card no-3 -->
+                  <div class="product" onclick="OpenCatagoryDetails()">
+                    <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('OKAYA MotoFaast 35 (PortableCharger, Silver)', './img/bike_3.png', '₹1,55,984')"></i></a>
+                    <img src="./img/bike_3.png" title="OKAYA MotoFaast 35 (with Portable Charger, Silver)" alt="FORTUNE Soya Chunks" class="img-fluid">
+                    <h5>OKAYA MotoFaast 35 (PortableCharger, Silver)</h5>
+                    <div class="company_logo"><img src="./img/okaya_logo.png"  alt=""></div>
+                    <p class="description">A two-wheeler vehicle is a motorized or non-motorized transport with two wheels, commonly including bicycles and motorcycles.</p>
+                    <div class="star-icons">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                    <p class="price">₹1,55,984 <span class="old_price"> ₹1,56,953</span> 1% off</p>
+                    <button class="quantity" onclick="addcart('OKAYA MotoFaast 35 (PortableCharger, Silver)', './img/bike_3.png','155984 ','156953','1')">Add to Cart</button>
+                    <button  class="btn btn-danger" onclick="buyNow('ThankYou', '155984')">Buy Now</button>
+                  </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3"> <!-- card no-4 -->
+                  <div class="product" onclick="OpenCatagoryDetails()">
+                    <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('KTM Duke 200 cc Sports Bike', './img/bike_4.jpg', '₹2,77,200 ')"></i></a>
+                    <img src="./img/bike_4.jpg" title=" KTM Duke 200 cc Sports Bike" alt="FORTUNE Soya Chunks" class="img-fluid">
+                    <h5> KTM Duke 200 cc Sports Bike</h5>
+                    <div class="company_logo"><img src="./img/ktm_logo.png"  alt=""></div>
+                    <p class="description">A two-wheeler vehicle is a motorized or non-motorized transport with two wheels, commonly including bicycles and motorcycles.</p>
+                    <div class="star-icons">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                    <p class="price">₹2,77,200  <span class="old_price"> ₹2,80,000</span> 1%off</p>
+                    <button class="quantity" onclick="addcart('KTM Duke 200 cc Sports Bike', './img/bike_4.jpg', '277200','280000','1')">Add to Cart</button>
+                    <button  class="btn btn-danger" onclick="buyNow('ThankYou', '277200')">Buy Now</button>
+                  </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3"> <!-- card no-5 -->
+                  <div class="product" onclick="OpenCatagoryDetails()">
+                    <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('amaha R15 V4 Sports Bike', './img/bike_5.png', '₹2,35,517')"></i></a>
+                    <img src="./img/bike_5.png" title="Yamaha R15 V4 Sports Bike" alt="FORTUNE Soya Chunks" class="img-fluid">
+                    <h5>Yamaha R15 V4 Sports Bike</h5>
+                    <div class="company_logo"><img src="./img/yamaha_logo.png" alt=""></div>
+                    <p class="description">A two-wheeler vehicle is a motorized or non-motorized transport with two wheels, commonly including bicycles and motorcycles.</p>
+                    <div class="star-icons">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                    <p class="price">₹2,35,517  <span class="old_price"> ₹2,50,549 </span> 6% off</p>
+                    <button class="quantity" onclick="addcart('Yamaha R15 V4 Sports Bike', './img/bike_5.png', '235517','250549','6')">Add to Cart</button>
+                    <button  class="btn btn-danger" onclick="buyNow('ThankYou', '235517')">Buy Now</button>
+                  </div>
+                </div>   
+
+                <div class="col-xl-3 col-lg-3"> <!-- card no-6-->
+                  <div class="product" onclick="OpenCatagoryDetails()">
+                    <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('Bajaj Pulsar 220 F anti-locking braking system', '../img/bike_6.png', '₹1,39,121')"></i></a>
+                    <img src="./img/bike_6.png" title="Bajaj Pulsar 220 F anti-locking braking system" alt="FORTUNE Soya Chunks" class="img-fluid">
+                    <h5> Bajaj Pulsar 220 F anti-locking braking system</h5>
+                    <div class="company_logo"><img src="./img/Bajaj_logo.png"  alt=""></div>
+                    <p class="description">A two-wheeler vehicle is a motorized or non-motorized transport with two wheels, commonly including bicycles and motorcycles.</p>                 
+                    <div class="star-icons">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                    <p class="price">₹1,36,796<span class="old_price"> ₹1,41,026</span> 3% off</p>
+                    <button class="quantity" onclick="addcart('Bajaj Pulsar 220 F anti-locking braking system', './img/bike_6.png', '136796','141026','3')">Add to Cart</button>
+                    <button  class="btn btn-danger" onclick="buyNow('ThankYou', '136796')">Buy Now</button>
+                  </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3"> <!-- card no-7-->
+                  <div class="product" onclick="OpenCatagoryDetails()">
+                    <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('Royal Enfield Bullet Classic 500', './img/bike_7.png', '₹2,20,721')"></i></a>
+                    <img src="./img/bike_7.png" title="Royal Enfield Bullet Classic 500" alt="FORTUNE Soya Chunks" class="img-fluid">
+                    <h5>Royal Enfield Bullet Classic 500</h5>
+                    <div class="company_logo"><img src="./img/Royal_Enfield_Logo_text.png"  alt=""></div>
+                    <p class="description">A two-wheeler vehicle is a motorized or non-motorized transport with two wheels, commonly including bicycles and motorcycles.</p>
+                    <div class="star-icons">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                    <p class="price">₹2,20,721 <span class="old_price">₹2,50,819</span> 12% off</p>
+                    <button class="quantity" onclick="addcart('Royal Enfield Bullet Classic 500', './img/bike_7.png', '220721','250819','12')">Add to Cart</button>
+                    <button  class="btn btn-danger" onclick="buyNow('ThankYou', '220721')">Buy Now</button>
+                  </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3"> <!-- card no- 8-->
+                  <div class="product" onclick="OpenCatagoryDetails()">
+                    <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('Joy e-bike Mihos (Charger,Satin Blue)', './img/bike_8.png', '₹1,20,150')"></i></a>
+                    <img src="./img/bike_8.png" title="Joy e-bike Mihos (Charger,Satin Blue) " alt="FORTUNE Soya Chunks" class="img-fluid">
+                    <h5>Joy e-bike Mihos (Charger,Satin Blue)</h5>
+                    <div class="company_logo"><img src="./img/Joy_logo.png"  alt=""></div>
+                    <p class="description">A two-wheeler vehicle is a motorized or non-motorized transport with two wheels, commonly including bicycles and motorcycles.</p>
+                    <div class="star-icons">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                    <p class="price">₹1,20,150 <span class="old_price"> ₹1,35,000</span> 11% off</p>
+                    <button class="quantity" onclick="addcart('Joy e-bike Mihos (Charger,Satin Blue)', './img/bike_8.png', '120150','135000','11')">Add to Cart</button>
+                    <button  class="btn btn-danger" onclick="buyNow('ThankYou', '120150')">Buy Now</button>
+                  </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3"> <!-- card no- 9-->
+                  <div class="product" onclick="OpenCatagoryDetails()">
+                    <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('Hero Splendor+ (XTEC)(Pearl White)', '../img/bike_9.png', '₹80,052')"></i></a>
+                    <img src="./img/bike_9.png" title="Hero Splendor+ (XTEC)(Pearl White)" alt="FORTUNE Soya Chunks" class="img-fluid">
+                    <h5>Hero Splendor+ (XTEC)(Pearl White)</h5>
+                    <div class="company_logo"><img src="./img/Hero-logo.png"  alt=""></div>
+                    <p class="description">A two-wheeler vehicle is a motorized or non-motorized transport with two wheels, commonly including bicycles and motorcycles.</p>
+                    <div class="star-icons">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                    <p class="price">₹80,052<span class="old_price"> ₹85,161</span> 6% off</p>
+                    <button class="quantity" onclick="addcart('Hero Splendor+ (XTEC)(Pearl White)', '../img/bike_9.png', '80052','85161','6')">Add to Cart</button>
+                    <button  class="btn btn-danger" onclick="buyNow('ThankYou', '80052')">Buy Now</button>
+                  </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3"> <!-- card no- 10 -->
+                  <div class="product" onclick="OpenCatagoryDetails()">
+                    <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('Joy e-bike Glob(With Charger, Blue)</', './img/bike_10.png', '₹74,304')"></i></a>
+                    <img src="./img/bike_10.png" title=" Joy e-bike Glob(With Charger, Blue)" alt="FORTUNE Soya Chunks" class="img-fluid">
+                    <h5>Joy e-bike Glob(With Charger, Blue)</h5>
+                    <div class="company_logo"><img src="./img/Joy_logo.png"  alt=""></div>
+                    <p class="description">A two-wheeler vehicle is a motorized or non-motorized transport with two wheels, commonly including bicycles and motorcycles.</p>
+                    <div class="star-icons">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                    <p class="price">₹74,304<span class="old_price"> ₹77,400</span> 4% off</p>
+                    <button class="quantity" onclick="addcart('Joy e-bike Glob(With Charger, Blue)', './img/bike_10.png', '74304','77400','4')">Add to Cart</button>
+                    <button  class="btn btn-danger" onclick="buyNow('ThankYou', '74304')">Buy Now</button>
+                  </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3"> <!-- card no- 11-->
+                  <div class="product" onclick="OpenCatagoryDetails()">
+                    <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('Honda CB Hornet 160 R(Orange)', './img/bike_11.png', '₹1,64,998')"></i></a>
+                    <img src="./img/bike_11.png" title="Honda CB Hornet 160 R" alt="FORTUNE Soya Chunks" class="img-fluid">
+                    <h5>Honda CB Hornet 160 R(Orange)</h5>
+                    <div class="company_logo"><img src="./img/Honda_logo.png"  alt=""></div>
+                    <p class="description">A two-wheeler vehicle is a motorized or non-motorized transport with two wheels, commonly including bicycles and motorcycles.</p>
+                    <div class="star-icons">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                    <p class="price">₹1,64,998  <span class="old_price"> ₹1,70,101 </span> 3% off</p>
+                    <button class="quantity" onclick="addcart('Honda CB Hornet 160 R(Orange)', './img/bike_11.png', '164998','170101','3')">Add to Cart</button>
+                    <button  class="btn btn-danger" onclick="buyNow('ThankYou', '164998')">Buy Now</button>
+                  </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-3"> <!-- card no- 12-->
+                  <div class="product" onclick="OpenCatagoryDetails()">
+                    <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('TVS Scooty Zest 110 Matte Yellow', '../img/bike_12.png', '₹66,639')"></i></a>
+                    <img src="./img/bike_12.png" title="TVS Scooty Zest 110 Matte Yellow" alt="FORTUNE Soya Chunks" class="img-fluid">
+                    <h5>TVS Scooty Zest 110 Matte Yellow</h5>
+                    <div class="company_logo"><img src="./img/TVS-motors-logo.png"  alt=""></div>
+                    <p class="description">A two-wheeler vehicle is a motorized or non-motorized transport with two wheels, commonly including bicycles and motorcycles.</p>
+                    <div class="star-icons">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </div>
+                    <p class="price">₹66,639<span class="old_price"> ₹67,999</span> 2% off</p>
+                    <button class="quantity" onclick="addcart('TVS Scooty Zest 110 Matte Yellow', './img/bike_12.png', '66639','67999','2')">Add to Cart</button>
+                    <button  class="btn btn-danger" onclick="buyNow('ThankYou', '66639')">Buy Now</button>
+                  </div>
+                </div>
+
+                <!-- ................card-end........... -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<!--...... footer ........-->
+<div class="footer-banner"></div>
+<section class="foot">
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-lg-3 col-sm-12">
+                    <h5><i class="fas fa-info-circle"></i> About Us</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum.</p>
+                </div>
+                <div class="col-md-3 col-lg-3 col-sm-12">
+                  <h5><i class="fas fa-headset"></i> Customer Service</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                        <li><a href="orders.html"><i class="fas fa-undo"></i> Returns</a></li>
+                        <li><a href="orders.html"><i class="fas fa-shipping-fast"></i> Shipping</a></li>
+                        <li><a href="profile.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-lg-3 col-sm-12">
+                  <h5><i class="fas fa-user-circle"></i> My Account</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fas fa-sign-in-alt"></i> Sign In</a></li>
+                        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> View Cart</a></li>
+                        <li><a href="wishlist.html"><i class="fas fa-heart"></i> My Wishlist</a></li>
+                        <li><a href="orders.html"><i class="fas fa-truck"></i> Track My Order</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-lg-3 col-sm-12">
+                  <h5><i class="fas fa-share-alt"></i> Connect</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+
+<!-- ........down-footer ..... -->
+<section>
+    <div class="down-footer">
+        <div class="container">
+        <h3>© 2024. ClikShop Ltd. all Rights Reserved</h3>
+        </div>
+    </div>
+    <div class="clear"></div>
+</section>
+   
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>

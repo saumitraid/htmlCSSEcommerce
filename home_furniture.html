@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>ClikShop || KidsFashion</title>
+    <!-- own js -->
+    <script src="./js/script.js" defer></script>
+    <!-- payment js link -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body class="protected">
+
+    <!-- ... Top-nav ....-->
+    <section>
+        <div class="top-nav sticky-top head">
+            <div class="container">
+                <div id="greeting"></div>
+                <h3>0208 058 2932   ||  Customerservices@ClikShop.Co.in</h3>
+            </div>
+        </div>
+    </section>
+        
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+        <img src="./img/logo.png" class="navbar-logo" alt="LOGO" style="width: 100px;" >
+        <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item item">
+                    <div class="input-group">
+                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" />
+                        <button type="button" class="btn btn-outline-primary" data-mdb-ripple-init>search</button>
+                    </div>
+                </li>
+                <li class="nav-item item">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item dropdown item">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class=" fas fa-user"></i> Profile 
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-clipboard-check"></i> Clik-Shop Plus Zone</a></li>
+                        <li><a class="dropdown-item" href="orders.html"><i class="fas fa-box"></i> Orders</a></li>
+                        <li><a class="dropdown-item" href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-gift"></i> Gift Cards</a></li>
+                        <li><a class="dropdown-item" href="contact.html"><i class="fas fa-phone-square-alt"></i></i> Contact</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" onclick="usrLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item item">
+                    <a class="nav-link" href="cart.html"><i class="fas fa-cart-arrow-down"></i> Cart</a>
+                </li>
+                <li class="nav-item item">
+                    <a class="nav-link " href="#"><i class="fas fa-store"></i> Become a Seller</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </nav>
+        
+    <!-- Nav bar products -->
+    <nav class="navbar-offer navbar-expand-lg">
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav container">
+    
+            <li class="nav-combo">
+                <img src="./img/glosry.png" alt="Grocery">
+                <a class="nav-link" href="grocery.html">Grocery</a>
+            </li>
+    
+            <li class="nav-combo">
+                <img src="./img/phone.png" alt="Mobiles">
+                <a class="nav-link" href="mobiles.html">Mobiles</a>
+            </li>
+            
+            <li class="nav-combo dropdown">
+                <img src="./img/fasion.png" alt="fashion">
+                <a class="nav-link dropdown-toggle" href="fassion.html">Fashion</a>
+                <div class="dropdown-content">
+        
+                    <div class="nested-dropdown">
+                        <a href="fassion.html">Men's Top Wear</a>
+                        <div class="nested-dropdown-content">
+                            <a href="fassion.html">Boys innerwear</a>
+                            <a href="fassion.html">Men's T-ShirtS</a>
+                            <a href="fassion.html">Men's Casual Shirts</a>
+                            <a href="fassion.html">Men's Formal Shirts</a>
+                            <a href="fassion.html">Men's Kurtas</a>
+                            <a href="fassion.html">Men's Blazers</a>
+                            <a href="fassion.html">Men's Raincoat</a>
+                            <a href="fassion.html">Men's Swaiters</a>
+                            <a href="fassion.html">All</a>
+                        </div>
+                    </div>
+        
+                    <div class="nested-dropdown">
+                        <a href="fassion.html">Men's Bottom Wear</a>
+                        <div class="nested-dropdown-content">
+                            <a href="fassion.html">Men's Jeans</a>
+                            <a href="fassion.html">Men's Trousers</a>
+                            <a href="fassion.html">Men's Tracksuit</a>
+                            <a href="fassion.html">Men's Shorts</a>
+                            <a href="fassion.html">Men's Threequartar</a>
+                            <a href="fassion.html">Men's Pyjama</a>
+                            <a href="fassion.html">Men's Dhoti</a>
+                            <a href="fassion.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="fassion.html">Women Top Wear</a>
+                        <div class="nested-dropdown-content">
+                            <a href="fassion.html">Women Sarees</a>
+                            <a href="fassion.html">Women Kurtas</a>
+                            <a href="fassion.html">Women Kurtis</a>
+                            <a href="fassion.html">Women Salwar </a>
+                            <a href="fassion.html">Women Gowns</a>
+                            <a href="fassion.html">Women Lehenga</a>
+                            <a href="fassion.html">Women Blouse</a>
+                            <a href="fassion.html">Women Shirts</a>
+                            <a href="fassion.html">Women T-Shirts</a>
+                            <a href="fassion.html">Women Dupatta</a>
+                            <a href="fassion.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="fassion.html">Women Western</a>
+                        <div class="nested-dropdown-content">
+                            <a href="fassion.html">Women Tops</a>
+                            <a href="fassion.html">Women Dresses</a>
+                            <a href="fassion.html">Women Polo</a>
+                            <a href="fassion.html">Women Jeans</a>
+                            <a href="fassion.html">Women Nighties</a>
+                            <a href="fassion.html">Women Nightsuit</a>
+                            <a href="fassion.html">Women Trouser</a>
+                            <a href="fassion.html">Women Sports Bra</a>
+                            <a href="fassion.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="fassion.html">Women Western</a>
+                        <div class="nested-dropdown-content">
+                            <a href="fassion.html">Women Flats</a>
+                            <a href="fassion.html">Women Heels</a>
+                            <a href="fassion.html">Women Wedges</a>
+                            <a href="fassion.html">Women Slipper</a>
+                            <a href="fassion.html">Women Casual Shoes</a>
+                            <a href="fassion.html">Women Ballerinas</a>
+                            <a href="fassion.html">Women Sneakers</a>
+                            <a href="fassion.html">Women Boots</a>
+                            <a href="fassion.html">Women Ethnic Shoes</a>
+                            <a href="fassion.html">All</a>
+                        </div>
+                    </div>
+    
+                </div>
+            </li>
+    
+            <li class="nav-combo">
+                <img src="./img/electronic.png" alt="Electronics">
+                <a class="nav-link" href="electronics.html">Electronics</a>
+            </li>
+            
+            <li class="nav-combo dropdown">
+                <img src="./img/boyy.png" alt="fassion">
+                <a class="nav-link dropdown-toggle" href="kids.html">Kids Fashion</a>
+                <div class="dropdown-content">
+        
+                    <div class="nested-dropdown">
+                        <a href="kids.html">Boy's Top Wear</a>
+                        <div class="nested-dropdown-content">
+                            <a href="kids.html">Boy's innerwear</a>
+                            <a href="kids.html">Boy's T-ShirtS</a>
+                            <a href="kids.html">Boy's Casual Shirts</a>
+                            <a href="kids.html">Boy's Formal Shirts</a>
+                            <a href="kids.html">Boy's Kurtas</a>
+                            <a href="kids.html">Boy's Blazers</a>
+                            <a href="kids.html">Boy's Raincoat</a>
+                            <a href="kids.html">Boy's Swaiters</a>
+                            <a href="kids.html">All</a>
+                        </div>
+                    </div>
+        
+                    <div class="nested-dropdown">
+                        <a href="kids.html">Boy's Bottom Wear</a>
+                        <div class="nested-dropdown-content">
+                            <a href="kids.html">Boy's Jeans</a>
+                            <a href="kids.html">Boy's Trousers</a>
+                            <a href="kids.html">Boy's Tracksuit</a>
+                            <a href="kids.html">Boy's Shorts</a>
+                            <a href="kids.html">Boy's Threequartar</a>
+                            <a href="kids.html">Boy's Pyjama</a>
+                            <a href="kids.html">Boy's Dhoti</a>
+                            <a href="kids.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="kids.html">Girl's Top Wear</a>
+                        <div class="nested-dropdown-content">
+                            <a href="kids.html">Girl's Sarees</a>
+                            <a href="kids.html">Girl's Kurtas</a>
+                            <a href="kids.html">Girl's Kurtis</a>
+                            <a href="kids.html">Girl's Salwar </a>
+                            <a href="kids.html">Girl's Gowns</a>
+                            <a href="kids.html">Girl's Lehenga</a>
+                            <a href="kids.html">Girl's Blouse</a>
+                            <a href="kids.html">Girl's Shirts</a>
+                            <a href="kids.html">Girl's T-Shirts</a>
+                            <a href="kids.html">Girl's Dupatta</a>
+                            <a href="kids.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="kids.html">Girl's Western</a>
+                        <div class="nested-dropdown-content">
+                            <a href="kids.html">Girl's Tops</a>
+                            <a href="kids.html">Girl's Dresses</a>
+                            <a href="kids.html">Girl's Polo</a>
+                            <a href="kids.html">Girl's Jeans</a>
+                            <a href="kids.html">Girl's Nighties</a>
+                            <a href="kids.html">Girl's Nightsuit</a>
+                            <a href="kids.html">Girl's Trouser</a>
+                            <a href="kids.html">Girl's Sports Bra</a>
+                            <a href="kids.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="kids.html">Girl's Western</a>
+                        <div class="nested-dropdown-content">
+                            <a href="kids.html">Girl's Flats</a>
+                            <a href="kids.html">Girl's Heels</a>
+                            <a href="kids.html">Girl's Wedges</a>
+                            <a href="kids.html">Girl's Slipper</a>
+                            <a href="kids.html">Girl's Casual Shoes</a>
+                            <a href="kids.html">Girl's Ballerinas</a>
+                            <a href="kids.html">Girl's Sneakers</a>
+                            <a href="kids.html">Girl's Boots</a>
+                            <a href="kids.html">Girl's Ethnic Shoes</a>
+                            <a href="kids.html">All</a>
+                        </div>
+                    </div>
+    
+                </div>
+            </li>
+    
+            <li class="nav-combo dropdown">
+                <img src="./img/Furniture.png" alt="Home & Furniture">
+                <a class="nav-link dropdown-toggle" href="home_furniture.html">Home & Furniture</a>
+                <div class="dropdown-content">
+                
+                    <div class="nested-dropdown">
+                        <a href="home_furniture.html">Kitchen & Serveware</a>
+                        <div class="nested-dropdown-content">
+                            <a href="home_furniture.html">Pans</a>
+                            <a href="home_furniture.html">Tawas</a>
+                            <a href="home_furniture.html">Pressure Cookers</a>
+                            <a href="home_furniture.html">Kitchen tools</a>
+                            <a href="home_furniture.html">Gas Stoves</a>
+                            <a href="home_furniture.html">Coffee Mugs</a>
+                            <a href="home_furniture.html">Dinner Set</a>
+                            <a href="home_furniture.html">Barware</a>
+                            <a href="home_furniture.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="home_furniture.html">Kitchen Storage</a>
+                        <div class="nested-dropdown-content">
+                            <a href="home_furniture.html">Water Bottles</a>
+                            <a href="home_furniture.html">Lunch Boxes</a>
+                            <a href="home_furniture.html">Flasks</a>
+                            <a href="home_furniture.html">Casseroles</a>
+                            <a href="home_furniture.html">Kitchen Containers</a>
+                            <a href="home_furniture.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="home_furniture.html">Furnishingr</a>
+                        <div class="nested-dropdown-content">
+                            <a href="home_furniture.html">Bedsheets</a>
+                            <a href="home_furniture.html">Curtains</a>
+                            <a href="home_furniture.html">Cushions & Pillows</a>
+                            <a href="home_furniture.html">Blankets </a>
+                            <a href="home_furniture.html">Bath Towels</a>
+                            <a href="home_furniture.html">Kitchen & Table Linen</a>
+                            <a href="home_furniture.html">Floor Coverings</a>
+                            <a href="home_furniture.html">All</a>
+                        </div>
+                    </div>
+    
+                    <div class="nested-dropdown">
+                        <a href="home_furniture.html">Home Lighting</a>
+                        <div class="nested-dropdown-content">
+                            <a href="home_furniture.html">Wall Lamp</a>
+                            <a href="home_furniture.html">Bulbs</a>
+                            <a href="home_furniture.html">Table Lamp</a>
+                            <a href="home_furniture.html">Ceiling Lamp</a>
+                            <a href="home_furniture.html">Emergency Lights</a>
+                            <a href="home_furniture.html">All</a>
+                        </div>
+                    </div>
+        
+                    <div class="nested-dropdown">
+                        <a href="home_furniture.html">Living Room Furniture</a>
+                        <div class="nested-dropdown-content">
+                            <a href="home_furniture.html">Sofa</a>
+                            <a href="home_furniture.html">Sofa Beds</a>
+                            <a href="home_furniture.html">TV Units</a>
+                            <a href="home_furniture.html">Dining Tables & Chairs</a>
+                            <a href="home_furniture.html">Coffee Tables</a>
+                            <a href="home_furniture.html">Almira</a>
+                            <a href="home_furniture.html">Mirror</a>
+                            <a href="home_furniture.html">Cabinet</a>
+                            <a href="home_furniture.html">All</a>
+                        </div>
+                    </div>
+    
+                </div>
+            </li>
+    
+            <li class="nav-combo">
+                <img src="./img/fridge.png" alt="Electrical">
+                <a class="nav-link" href="electrical.html">Electrical</a>
+            </li>
+    
+            <li class="nav-combo">
+                <img src="./img/Beauty.png" alt="Toys & More">
+                <a class="nav-link" href="toys.html">Toys & More</a>
+            </li>
+    
+            <li class="nav-combo">
+                <img src="./img/twowhiller.png" alt="Two Wheelers">
+                <a class="nav-link" href="two-wheelers.html">Two Wheelers</a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+
+      <!-- ............Grocery-main-work.......... -->
+      <div class="product-all-item">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- ...................left-side................ -->
+            <div class="col-xl-3 col-lg-3 left">
+              <div class="menu">
+                  <ul class="list-group">
+                      <li class="list-group-item d-flex justify-content-between align-items-center active" aria-current="true">
+                          <i class="fa-regular fa-circle"></i> All
+                          <span class="badge bg-primary rounded-pill">15</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <i class="fa-regular fa-circle"></i> Sofas
+                          <span class="badge bg-primary rounded-pill">2</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <i class="fa-regular fa-circle"></i> Beds
+                          <span class="badge bg-primary rounded-pill">1</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <i class="fa-regular fa-circle"></i> Dining Tables
+                          <span class="badge bg-primary rounded-pill">1</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <i class="fa-regular fa-circle"></i> Chairs
+                          <span class="badge bg-primary rounded-pill">2</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <i class="fa-regular fa-circle"></i> Wardrobes
+                          <span class="badge bg-primary rounded-pill">3</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <i class="fa-regular fa-circle"></i> Coffee Tables
+                          <span class="badge bg-primary rounded-pill">2</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <i class="fa-regular fa-circle"></i> Bookshelves
+                          <span class="badge bg-primary rounded-pill">3</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                          <i class="fa-regular fa-circle"></i> TV Units
+                          <span class="badge bg-primary rounded-pill">1</span>
+                      </li>
+                      <li class="list-group-item">
+                          <a href="#" data-toggle="collapse" data-target="#lighting" aria-expanded="false" aria-controls="lighting">
+                              <i class="fa-solid fa-plus"></i> Lighting
+                              <img src="./img/lighting_house.png" class="float-right" alt="Lighting" height="40">
+                          </a>
+                      </li>
+                      <li class="list-group-item">
+                          <a href="#" data-toggle="collapse" data-target="#decor" aria-expanded="false" aria-controls="decor">
+                              <i class="fa-solid fa-plus"></i> Decor
+                              <img src="./img/decor_home.png" class="float-right" alt="Decor" width="30" height="40">
+                          </a>
+                      </li>
+                      <li class="list-group-item">
+                          <a href="#" data-toggle="collapse" data-target="#kitchen" aria-expanded="false" aria-controls="kitchen">
+                              <i class="fa-solid fa-plus"></i> Kitchen
+                              <img src="./img/Kitchen_home.png" class="float-right" alt="Kitchen" height="40">
+                          </a>
+                      </li>
+                  </ul>
+                  
+              </div>
+            </div>
+            <!-- ...................right-side................ -->
+            <div class="col-xl-9 right">
+              <div class="container">
+                <div class="row">
+  
+                  <div class="col-xl-3 col-lg-3"> <!-- card no-1 -->
+                    <div class="product" onclick="OpenCatagoryDetails()">
+                      <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST" id="dfy" onclick="wishList('Homes Opus Engineered Wood Queen Box Bed', './img/homefurni_1.png', '₹11,759')"></i></a>
+                      <img src="./img/homefurni_1.png" title="Homes Opus Engineered Wood Queen Box Bed" alt="FORTUNE Soya Chunks" class="img-fluid">
+                      <h5>Homes Opus Engineered Wood Queen Box Bed </h5>
+                      <p class="description">Home and furniture items include various furnishings and decor pieces designed to enhance comfort and aesthetics in living spaces.</p>
+                      <div class="star-icons">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <p class="price">₹11,759 <span class="old_price"> ₹27,999</span> 58% off</p>
+                      <button class="quantity" onclick="addcart('Homes Opus Engineered Wood Queen Box Bed', './img/homefurni_1.png', '11759','27999','58')">Add to Cart</button>
+                      <button  class="btn btn-danger" onclick="buyNow('ThankYou', '11759')">Buy Now</button>
+                    </div>
+                  </div>
+  
+                  <div class="col-xl-3 col-lg-3"> <!-- card no-2 -->
+                    <div class="product" onclick="OpenCatagoryDetails()">
+                      <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('Premium Quality RHS 8 Seate Sofa Set', './img/homefurni_2.png', '₹24,200')"></i></a>
+                      <img src="./img/homefurni_2.png" title="Premium Quality RHS 8 Seate Sofa Set" alt="FORTUNE Soya Chunks" class="img-fluid">
+                      <h5>Premium Quality RHS 8 Seate Sofa Set</h5>
+                      <p class="description">Home and furniture items include various furnishings and decor pieces designed to enhance comfort and aesthetics in living spaces.</p>
+                      <div class="star-icons">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <p class="price">₹24,200 <span class="old_price"> ₹55,000</span> 56% off</p>
+                      <button class="quantity" onclick="addcart('Premium Quality RHS 8 Seate Sofa Set', './img/homefurni_2.png', '24200','55000','56')">Add to Cart</button>
+                      <button  class="btn btn-danger" onclick="buyNow('ThankYou', '24200')">Buy Now</button>
+                    </div>
+                  </div>
+  
+                  <div class="col-xl-3 col-lg-3"> <!-- card no-3 -->
+                    <div class="product" onclick="OpenCatagoryDetails()">
+                      <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('Portable Engineered Wood 2 Seater Dining Table ', './img/homefurni_3.png', '₹1,999')"></i></a>
+                      <img src="./img/homefurni_3.png" title="Portable Engineered Wood 2 Seater Dining Table " alt="FORTUNE Soya Chunks" class="img-fluid">
+                      <h5>Portable Engineered Wood 2 Seater Dining Table </h5>
+                      <p class="description">Home and furniture items include various furnishings and decor pieces designed to enhance comfort and aesthetics in living spaces.</p>
+                      <div class="star-icons">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <p class="price">₹1,999 <span class="old_price"> ₹3,999</span> 50% off</p>
+                      <button class="quantity" onclick="addcart('Portable Engineered Wood 2 Seater Dining Table', './img/homefurni_3.png', '1999','3,999','50')">Add to Cart</button>
+                      <button  class="btn btn-danger" onclick="buyNow('ThankYou', '1999')">Buy Now</button>
+                    </div>
+                  </div>
+  
+                  <div class="col-xl-3 col-lg-3"> <!-- card no-4 -->
+                    <div class="product" onclick="OpenCatagoryDetails()">
+                      <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('Chairs Engineered Wood 2 Seater Dining Set ', './img/homefurni_4.png', '₹6,000')"></i></a>
+                      <img src="./img/homefurni_4.png" title=" Chairs Engineered Wood 2 Seater Dining Set " alt="FORTUNE Soya Chunks" class="img-fluid">
+                      <h5> Chairs Engineered Wood 2 Seater Dining Set </h5>
+                      <p class="description">Home and furniture items include various furnishings and decor pieces designed to enhance comfort and aesthetics in living spaces.</p>
+                      <div class="star-icons">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <p class="price">₹6,000 <span class="old_price"> ₹40,000</span> 85%off</p>
+                      <button class="quantity" onclick="addcart('Chairs Engineered Wood 2 Seater Dining Set', './img/homefurni_4.png', '6000','40000','85')">Add to Cart</button>
+                      <button  class="btn btn-danger" onclick="buyNow('ThankYou', '6000')">Buy Now</button>
+                    </div>
+                  </div>
+  
+                  <div class="col-xl-3 col-lg-3"> <!-- card no-5 -->
+                    <div class="product" onclick="OpenCatagoryDetails()">
+                      <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('MONO Engineered Wood 2 Door Wardrobe', './img/homefurni_5.png', '₹8,400')"></i></a>
+                      <img src="./img/homefurni_5.png" title=" MONO Engineered Wood 2 Door Wardrobe " alt="FORTUNE Soya Chunks" class="img-fluid">
+                      <h5> MONO Engineered Wood 2 Door Wardrobe </h5>
+                      <p class="description">Home and furniture items include various furnishings and decor pieces designed to enhance comfort and aesthetics in living spaces.</p>
+                      <div class="star-icons">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <p class="price">₹8,400 <span class="old_price"> ₹21,000</span> 60% off</p>
+                      <button class="quantity" onclick="addcart('MONO Engineered Wood 2 Door Wardrobe', './img/homefurni_5.png', '8400','21000','60')">Add to Cart</button>
+                      <button  class="btn btn-danger" onclick="buyNow('ThankYou', '8400')">Buy Now</button>
+                    </div>
+                  </div>   
+  
+                  <div class="col-xl-3 col-lg-3"> <!-- card no-6-->
+                    <div class="product" onclick="OpenCatagoryDetails()">
+                      <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('Multifunctional table Solid Wood Coffee Table', '../img/homefurni_6.png', '₹10,260')"></i></a>
+                      <img src="./img/homefurni_6.png" title="Multifunctional table Solid Wood Coffee Table " alt="FORTUNE Soya Chunks" class="img-fluid">
+                      <h5>Multifunctional table Solid Wood Coffee Table </h5>
+                      <p class="description">Home and furniture items include various furnishings and decor pieces designed to enhance comfort and aesthetics in living spaces.</p>                 
+                      <div class="star-icons">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <p class="price">₹10,260 <span class="old_price"> ₹27,000</span> 62% off</p>
+                      <button class="quantity" onclick="addcart('Multifunctional table Solid Wood Coffee Table', './img/homefurni_6.png', '10260','27000','62')">Add to Cart</button>
+                      <button  class="btn btn-danger" onclick="buyNow('ThankYou', '10260')">Buy Now</button>
+                    </div>
+                  </div>
+  
+                  <div class="col-xl-3 col-lg-3"> <!-- card no-7-->
+                    <div class="product" onclick="OpenCatagoryDetails()">
+                      <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('Tree Shape Engineered Wood Open Book Shelf', '../img/homefurni_7.png', '₹1,575')"></i></a>
+                      <img src="./img/homefurni_7.png" title="Tree Shape Engineered Wood Open Book Shelf" alt="FORTUNE Soya Chunks" class="img-fluid">
+                      <h5>Tree Shape Engineered Wood Open Book Shelf</h5>
+                      <p class="description">Home and furniture items include various furnishings and decor pieces designed to enhance comfort and aesthetics in living spaces.</p>
+                      <div class="star-icons">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <p class="price">₹1,575 <span class="old_price"> ₹3,499</span> 55% off</p>
+                      <button class="quantity" onclick="addcart('Tree Shape Engineered Wood Open Book Shelf', './img/homefurni_7.png', '1575','3499','55')">Add to Cart</button>
+                      <button  class="btn btn-danger" onclick="buyNow('ThankYou', '1575')">Buy Now</button>
+                    </div>
+                  </div>
+  
+                  <div class="col-xl-3 col-lg-3"> <!-- card no- 8-->
+                    <div class="product" onclick="OpenCatagoryDetails()">
+                      <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('icrush Wooden wall mounted tv unit', './img/homefurni_8.png', '₹1,239')"></i></a>
+                      <img src="./img/homefurni_8.png" title=" icrush Wooden wall mounted tv unit  " alt="FORTUNE Soya Chunks" class="img-fluid">
+                      <h5>icrush Wooden wall mounted tv unit </h5>
+                      <p class="description">Home and furniture items include various furnishings and decor pieces designed to enhance comfort and aesthetics in living spaces.</p>
+                      <div class="star-icons">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <p class="price">₹1,239 <span class="old_price"> ₹1,998</span> 38% off</p>
+                      <button class="quantity" onclick="addcart(' icrush Wooden wall mounted tv unit', './img/homefurni_8.png', '1239','1998','38')">Add to Cart</button>
+                      <button  class="btn btn-danger" onclick="buyNow('ThankYou', '1239')">Buy Now</button>
+                    </div>
+                  </div>
+  
+                  <div class="col-xl-3 col-lg-3"> <!-- card no- 9-->
+                    <div class="product" onclick="OpenCatagoryDetails()">
+                      <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('Star Work Analog 30 cm X 16 cm Wall Clock', './img/homefurni_9.png', '₹605')"></i></a>
+                      <img src="./img/homefurni_9.png" title="Star Work Analog 30 cm X 16 cm Wall Clock" alt="FORTUNE Soya Chunks" class="img-fluid">
+                      <h5>Star Work Analog 30 cm X 16 cm Wall Clock</h5>
+                      <p class="description">Home and furniture items include various furnishings and decor pieces designed to enhance comfort and aesthetics in living spaces.</p>
+                      <div class="star-icons">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <p class="price">₹605 <span class="old_price"> ₹1,099</span> 45% off</p>
+                      <button class="quantity" onclick="addcart('Star Work Analog 30 cm X 16 cm Wall Clock', './img/homefurni_9.png', '605','1099','45')">Add to Cart</button>
+                      <button  class="btn btn-danger" onclick="buyNow('ThankYou', '605')">Buy Now</button>
+                    </div>
+                  </div>
+  
+                  <div class="col-xl-3 col-lg-3"> <!-- card no- 10 -->
+                    <div class="product" onclick="OpenCatagoryDetails()">
+                      <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('LNT Manual Kitchen Knife Sharpener Tool ', './img/homefurni_10.png', '₹190')"></i></a>
+                      <img src="./img/homefurni_10.png" title=" LNT Manual Kitchen Knife Sharpener Tool " alt="FORTUNE Soya Chunks" class="img-fluid">
+                      <h5>LNT Manual Kitchen Knife Sharpener Tool </h5>
+                      <p class="description">Home and furniture items include various furnishings and decor pieces designed to enhance comfort and aesthetics in living spaces.</p>
+                      <div class="star-icons">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <p class="price">₹190 <span class="old_price"> ₹999</span> 81% off</p>
+                      <button class="quantity" onclick="addcart('LNT Manual Kitchen Knife Sharpener Tool', './img/homefurni_10.png', '190','999','81')">Add to Cart</button>
+                      <button  class="btn btn-danger" onclick="buyNow('ThankYou', '190')">Buy Now</button>
+                    </div>
+                  </div>
+  
+                  <div class="col-xl-3 col-lg-3"> <!-- card no- 11-->
+                    <div class="product" onclick="OpenCatagoryDetails()">
+                      <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('Wooden Handle Silicone Coking Spoon Set', '../img/homefurni_11.png', '₹1,260')"></i></a>
+                      <img src="./img/homefurni_11.png" title="Wooden Handle Silicone Coking Spoon Set" alt="FORTUNE Soya Chunks" class="img-fluid">
+                      <h5>Wooden Handle Silicone Coking Spoon Set</h5>
+                      <p class="description">Home and furniture items include various furnishings and decor pieces designed to enhance comfort and aesthetics in living spaces.</p>
+                      <div class="star-icons">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <p class="price">₹1,260 <span class="old_price"> ₹2,999</span> 58% off</p>
+                      <button class="quantity" onclick="addcart('Wooden Handle Silicone Coking Spoon Set', './img/homefurni_11.png', '1260','2999','58')">Add to Cart</button>
+                      <button  class="btn btn-danger" onclick="buyNow('ThankYou', '1260')">Buy Now</button>
+                    </div>
+                  </div>
+  
+                  <div class="col-xl-3 col-lg-3"> <!-- card no- 12-->
+                    <div class="product" onclick="OpenCatagoryDetails()">
+                      <a class="wish"><i class="fa-regular fa-heart" title="ADD TO WISH LIST"  onclick="wishList('Adhvik Resin Antique Standing Shiv Showpiece', './img/homefurni_12.png', '₹449.5')"></i></a>
+                      <img src="./img/homefurni_12.png" title="Adhvik Resin Antique Standing Shiv Showpiece" alt="FORTUNE Soya Chunks" class="img-fluid">
+                      <h5>Adhvik Resin Antique Standing Shiv Showpiece </h5>
+                      <p class="description">Home and furniture items include various furnishings and decor pieces designed to enhance comfort and aesthetics in living spaces.</p>
+                      <div class="star-icons">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                      </div>
+                      <p class="price">₹499.5 <span class="old_price"> ₹999</span> 50% off</p>
+                      <button class="quantity" onclick="addcart('Adhvik Resin Antique Standing Shiv Showpiece', './img/homefurni_12.png', '499.5','999',50)">Add to Cart</button>
+                      <button  class="btn btn-danger" onclick="buyNow('ThankYou', '499.5')">Buy Now</button>
+                    </div>
+                  </div>
+  
+                  <!-- ................card-end........... -->
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+
+<!--...... footer ........-->
+<div class="footer-banner"></div>
+<section class="foot">
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-lg-3 col-sm-12">
+                    <h5><i class="fas fa-info-circle"></i> About Us</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum.</p>
+                </div>
+                <div class="col-md-3 col-lg-3 col-sm-12">
+                  <h5><i class="fas fa-headset"></i> Customer Service</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                        <li><a href="orders.html"><i class="fas fa-undo"></i> Returns</a></li>
+                        <li><a href="orders.html"><i class="fas fa-shipping-fast"></i> Shipping</a></li>
+                        <li><a href="profile.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-lg-3 col-sm-12">
+                  <h5><i class="fas fa-user-circle"></i> My Account</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fas fa-sign-in-alt"></i> Sign In</a></li>
+                        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> View Cart</a></li>
+                        <li><a href="wishlist.html"><i class="fas fa-heart"></i> My Wishlist</a></li>
+                        <li><a href="orders.html"><i class="fas fa-truck"></i> Track My Order</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-lg-3 col-sm-12">
+                  <h5><i class="fas fa-share-alt"></i> Connect</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+
+<!-- ........down-footer ..... -->
+<section>
+    <div class="down-footer">
+        <div class="container">
+        <h3>© 2024. ClikShop Ltd. all Rights Reserved</h3>
+        </div>
+    </div>
+    <div class="clear"></div>
+</section>
+   
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>

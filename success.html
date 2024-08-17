@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- own js -->
+    <script src="./js/script.js" defer></script>
+</head>
+<body>
+    <div class="container text-center success-page">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg p-4">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h1 class="success-message">Payment Successful!</h1>
+                    <p class="lead">Thank you for your purchase. Your payment has been processed successfully.</p>
+                    <a href="index.html" class="btn btn-primary mt-3">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="balloons">
+        <div class="balloon" style="background-color: #349eeb;"></div>
+        <div class="balloon" style="background-color: #ffb142;"></div>
+        <div class="balloon" style="background-color: #f3692d;"></div>
+        <div class="balloon" style="background-color: #20b7f8;"></div>
+        <div class="balloon" style="background-color: #33d9b2;"></div>
+        <div class="balloon" style="background-color: #30dc19;"></div>
+        <div class="balloon" style="background-color: #202de3;"></div>
+        <div class="balloon" style="background-color: #f90dca;"></div>
+        <div class="balloon" style="background-color: #ff0000;"></div>
+
+    </div>
+    <div class="emojis">
+        <div class="emoji">🎉</div>
+        <div class="emoji">🎊</div>
+        <div class="emoji">🥳</div>
+        <div class="emoji">🎈</div>
+        <div class="emoji">👏</div>
+    </div>
+</body>
+</html>
+
+<style>
+body {
+    background-color: #f0f8ff;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+.success-page {
+    margin-top: 50px;
+    animation: fadeInBackground 2s ease-in-out;
+}
+
+.card {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border-radius: 15px;
+    border: none;
+    animation: fadeInCard 1s ease-in-out;
+}
+.success-icon {
+    font-size: 100px;
+    color: #28a745;
+    animation: icon-bounce 1s ease-in-out infinite;
+    
+}
+.success-message {
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 20px;
+    animation: fadeInText 2s ease-in-out;
+}
+.lead {
+    font-size: 1.25rem;
+    color: #666;
+    margin: 20px 0;
+    animation: fadeInText 2s ease-in-out;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    animation: fadeInText 2s ease-in-out;
+}
+
+.balloons {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 50px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: red;
+    animation: floatBalloon 8s ease-in-out infinite;
+    opacity: 0.9;
+}
+
+.balloon:nth-child(1) {
+    left: 5%;
+    animation-delay: 5s;
+}
+.balloon:nth-child(2) {
+    left: 30%;
+    animation-delay: 2s;
+}
+.balloon:nth-child(3) {
+    left: 50%;
+    animation-delay: 4s;
+}
+.balloon:nth-child(4) {
+    left: 70%;
+    animation-delay: 6s;
+}
+.balloon:nth-child(5) {
+    left: 90%;
+    animation-delay: 1s;
+}
+.balloon:nth-child(6) {
+    left: 40%;
+    animation-delay: 5s;
+}
+.balloon:nth-child(7) {
+    left: 30%;
+    animation-delay: 0s;
+}
+.balloon:nth-child(8) {
+    left: 70%;
+    animation-delay: 2s;
+}
+
+@keyframes floatBalloon {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1200px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+ .emojis {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.emoji {
+    position: absolute;
+    font-size: 48px;
+    animation: floatEmoji 5s ease-in-out infinite;
+    bottom: -150px;
+} 
+
+.emoji:nth-child(1) {
+    left: 15%;
+    animation-delay: 0s;
+}
+.emoji:nth-child(2) {
+    left: 35%;
+    animation-delay: 1s;
+}
+.emoji:nth-child(3) {
+    left: 55%;
+    animation-delay: 2s;
+}
+.emoji:nth-child(4) {
+    left: 75%;
+    animation-delay: 3s;
+}
+.emoji:nth-child(5) {
+    left: 95%;
+    animation-delay: 0.5s;
+}
+
+@keyframes floatEmoji {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+@keyframes icon-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fadeInCard {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+</style>
